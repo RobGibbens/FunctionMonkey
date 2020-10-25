@@ -1,6 +1,6 @@
 ﻿using System;
 using FunctionMonkey.Tests.Integration.Common;
-using Microsoft.WindowsAzure.Storage;
+using Microsoft.Azure.Storage;
 
 namespace FunctionMonkey.Tests.Integration.Storage.Helpers
 {

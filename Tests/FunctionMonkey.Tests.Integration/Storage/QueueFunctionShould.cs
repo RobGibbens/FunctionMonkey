@@ -4,7 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FunctionMonkey.Tests.Integration.Common;
 using FunctionMonkey.Tests.Integration.Storage.Helpers;
-using Microsoft.WindowsAzure.Storage.Queue;
+using Microsoft.Azure.Storage.Queue;
 using Newtonsoft.Json;
 using Xunit;
 

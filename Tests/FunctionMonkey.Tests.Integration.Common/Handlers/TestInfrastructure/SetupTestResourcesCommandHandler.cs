@@ -2,10 +2,10 @@
 using System.Threading.Tasks;
 using AzureFromTheTrenches.Commanding.Abstractions;
 using FunctionMonkey.Tests.Integration.Common.Commands.TestInfrastructure;
-using Microsoft.WindowsAzure.Storage;
-using Microsoft.WindowsAzure.Storage.Blob;
-using Microsoft.WindowsAzure.Storage.Queue;
-using Microsoft.WindowsAzure.Storage.Table;
+using Microsoft.Azure.Cosmos.Table;
+using Microsoft.Azure.Storage;
+using Microsoft.Azure.Storage.Blob;
+using Microsoft.Azure.Storage.Queue;
 
 namespace FunctionMonkey.Tests.Integration.Common.Handlers.TestInfrastructure
 {
@@ -14,7 +14,7 @@ namespace FunctionMonkey.Tests.Integration.Common.Handlers.TestInfrastructure
         public async Task ExecuteAsync(SetupTestResourcesCommand command)
         {
             // Storage
-            CloudStorageAccount storageAccount = CloudStorageAccount.Parse(Environment.GetEnvironmentVariable("storageConnectionString"));
+            var storageAccount = CloudStorageAccount.Parse(Environment.GetEnvironmentVariable("storageConnectionString"));
 
             CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
             CloudTable markerTable = tableClient.GetTableReference(Constants.Storage.Table.Markers);

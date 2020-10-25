@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using FunctionMonkey.Tests.Integration.Common;
 using FunctionMonkey.Tests.Integration.Storage.Helpers;
-using Microsoft.WindowsAzure.Storage.Blob;
+using Microsoft.Azure.Storage.Blob;
 using Newtonsoft.Json;
 using Xunit;
 

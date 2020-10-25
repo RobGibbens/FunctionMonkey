@@ -1,8 +1,8 @@
 using System;
 using System.Threading.Tasks;
 using FunctionMonkey.Tests.Integration.Common.Model;
-using Microsoft.WindowsAzure.Storage;
-using Microsoft.WindowsAzure.Storage.Table;
+using Microsoft.Azure.Cosmos.Table;
+using Microsoft.Azure.Storage;
 
 namespace FunctionMonkey.Tests.Integration.Common.Services
 {

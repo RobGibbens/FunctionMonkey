@@ -7,14 +7,14 @@ foreach (var commandResultItem in result)
 {{else}}
     string resultJson = pluginFunctions.Serialize(commandResultItem, false);
 {{/if}}
-    await collector.AddAsync(new Microsoft.WindowsAzure.Storage.Queue.CloudQueueMessage(resultJson));
+    await collector.AddAsync(new Microsoft.Azure.Storage.Queue.CloudQueueMessage(resultJson));
 }
 {{else}}
-    {{#if OutputBinding.HasOutputBindingConverter}}
+{{#if OutputBinding.HasOutputBindingConverter}}
         var convertedItem = pluginFunctions.OutputBindingConverter(result);
         string resultJson = pluginFunctions.Serialize(convertedItem, false);
-    {{else}}
+{{else}}
         string resultJson = pluginFunctions.Serialize(result, false);
-    {{/if}}
-    await collector.AddAsync(new Microsoft.WindowsAzure.Storage.Queue.CloudQueueMessage(resultJson));
+{{/if}}
+    await collector.AddAsync(new Microsoft.Azure.Storage.Queue.CloudQueueMessage(resultJson));
 {{/if}}
