@@ -5,7 +5,8 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="AzureFromTheTrenches.Commanding.Abstractions" Version="9.0.2" />
-    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.0.2" />
+    <PackageReference Include="Microsoft.Azure.WebJobs.Extensions" Version="4.0.1" />
+    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.0.9" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Source\FunctionMonkey.Compiler\FunctionMonkey.Compiler.csproj" />
