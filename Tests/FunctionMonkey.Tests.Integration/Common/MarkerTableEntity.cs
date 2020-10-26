@@ -1,4 +1,4 @@
-﻿using Microsoft.Azure.Storage.Table;
+﻿using Microsoft.Azure.Cosmos.Table;
 
 internal class MarkerTableEntity : TableEntity
 {

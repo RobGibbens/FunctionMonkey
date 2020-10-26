@@ -14,18 +14,19 @@ namespace FunctionMonkey.Tests.Integration.Common.Handlers.TestInfrastructure
         public async Task ExecuteAsync(SetupTestResourcesCommand command)
         {
             // Storage
-            var storageAccount = CloudStorageAccount.Parse(Environment.GetEnvironmentVariable("storageConnectionString"));
+            var cosmosStorageAccount = Microsoft.Azure.Cosmos.Table.CloudStorageAccount.Parse(Environment.GetEnvironmentVariable("storageConnectionString"));
 
-            CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
+            CloudTableClient tableClient = cosmosStorageAccount.CreateCloudTableClient();
             CloudTable markerTable = tableClient.GetTableReference(Constants.Storage.Table.Markers);
             await markerTable.CreateIfNotExistsAsync();
 
-            CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+            var storageAccount = Microsoft.Azure.Storage.CloudStorageAccount.Parse(Environment.GetEnvironmentVariable("storageConnectionString"));
+            var queueClient = storageAccount.CreateCloudQueueClient();
             CloudQueue testQueue = queueClient.GetQueueReference(Constants.Storage.Queue.TestQueue);
             await testQueue.CreateIfNotExistsAsync();
             CloudQueue markerQueue = queueClient.GetQueueReference(Constants.Storage.Queue.MarkerQueue);
             await markerQueue.CreateIfNotExistsAsync();
-
+            
             CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
             CloudBlobContainer blobCommandsContainer = blobClient.GetContainerReference(Constants.Storage.Blob.BlobCommandContainer);
             await blobCommandsContainer.CreateIfNotExistsAsync();

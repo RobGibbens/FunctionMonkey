@@ -10,7 +10,7 @@ namespace FunctionMonkey.Tests.Integration.Common.Services
     {
         public async Task RecordMarker(Guid markerId)
         {
-            CloudStorageAccount storageAccount = CloudStorageAccount.Parse(Environment.GetEnvironmentVariable("storageConnectionString"));
+            Microsoft.Azure.Cosmos.Table.CloudStorageAccount storageAccount = Microsoft.Azure.Cosmos.Table.CloudStorageAccount.Parse(Environment.GetEnvironmentVariable("storageConnectionString"));
             CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
             CloudTable table = tableClient.GetTableReference(Constants.Storage.Table.Markers);
 

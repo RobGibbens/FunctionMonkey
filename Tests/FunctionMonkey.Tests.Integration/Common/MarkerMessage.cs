@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Microsoft.Azure.Cosmos.Table;
 
 namespace FunctionMonkey.Tests.Integration.Common
 {
