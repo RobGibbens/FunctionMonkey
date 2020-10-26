@@ -1,4 +1,4 @@
 ﻿<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Sdk="Microsoft.NET.Sdk.Publish" Project="Sdk.targets" />
-  <Import Project="$(MSBuildThisFileDirectory)..\build\netstandard1.0\BuildCompileCommandingFunctions.targets" />
+  <Import Project="$(MSBuildThisFileDirectory)..\build\netstandard2.1\BuildCompileCommandingFunctions.targets" />
 </Project>

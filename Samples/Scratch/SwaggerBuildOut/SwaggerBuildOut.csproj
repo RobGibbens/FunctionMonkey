@@ -37,7 +37,6 @@
     <ProjectReference Include="..\..\..\Source\FunctionMonkey.Abstractions\FunctionMonkey.Abstractions.csproj" />
     <ProjectReference Include="..\..\..\Source\FunctionMonkey.Commanding.Abstractions\FunctionMonkey.Commanding.Abstractions.csproj" />
     <ProjectReference Include="..\..\..\Source\FunctionMonkey\FunctionMonkey.csproj" />
-    <ProjectReference Include="..\ExternalTypes\ExternalTypes.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Update="host.json">
